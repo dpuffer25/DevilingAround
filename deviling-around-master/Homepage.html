@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="Homepage.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="icon" href="https://brandguide.asu.edu/sites/default/files/resize/styles/panopoly_image_original/public/asu_pitchfork_gold_maroon_gold-175x323.png?itok=jg1ADRb7">
+
+
+<style>
+
+
+</style>
+</head>
+
+
+<body class="bg">
+		<nav>
+				<div class="toggle">
+					<i class="fa fa-bars menu" aria-hidden="true"></i>
+				</div>
+				<ul>
+					<li><a href="Homepage.html">Home</a></li>
+					<li><a href="Newsfeed.html">News Feed</a></li>
+					<li><a href="Events.html">Events</a></li>
+					<li><a href="Profile.html">Profile</a></li>
+					<li><a href="Deviling_Around.html">Log Out</a></li>
+				</ul>
+			</nav>
+			<h1 class="welcome">Welcome <div id="USER"></div> <br>To Deviling Around</h1>
+		<footer></footer>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.menu').click(function(){
+					$('ul').toggleClass('active');
+				})
+			})
+		</script>
+</body>
+</html>

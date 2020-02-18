@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Deviling Around</title>
+  <link rel="icon" href="https://brandguide.asu.edu/sites/default/files/resize/styles/panopoly_image_original/public/asu_pitchfork_gold_maroon_gold-175x323.png?itok=jg1ADRb7">
+        <style>
+          *,*:before, *:after
+          {
+            box-sizing: border-box;
+          }
+            html,body
+            {
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .main
+            {
+                padding: 1px 0;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+                background-image: url("https://www.firststar.org/wp-content/uploads/2019/01/ASU-Summer-Session-cropped.jpg");
+                background-size: cover;
+            }
+
+            #login
+            {
+                margin: 90px auto;
+                max-width: 300px;
+                min-height: 600px;
+                background-color: rgba(10,10,10,.68);
+            }
+
+            .logo
+            {
+              padding: 10px;
+              height: 205px;
+              width: 100%;
+              position: relative;
+              text-align: center;
+            }
+
+            #login-form
+            {     
+              padding: 110px 20px 20px;
+              height: 200px;
+              width: 100%;
+            }
+
+            .user-input
+            {
+                position: relative;
+                margin-bottom: 10px;
+                border-bottom: 1px solid white;
+                height: 40px;
+            }
+
+            .pass-input
+            {
+                position: relative;
+                margin-bottom: 10px;
+                height: 40px;
+                border-bottom: 1px solid white;
+            }
+
+            .retype-p
+            {
+                position: relative;
+                margin-bottom: 10px;
+                height: 40px;
+                border-bottom: 1px solid white;
+            }
+            
+            .email-input
+            {
+              position: relative;
+              margin-bottom: 10px;
+              border-bottom: 1px solid white;
+              height: 40px;
+            }
+
+            input
+            {
+                position: absolute;
+                height: 30px;
+                margin: 15px 0;
+                width: 195px;
+                background: transparent;
+                border:none;
+            }
+
+            input:focus, button:focus
+            {
+              outline: none;
+            }
+
+            input[type=text],input[type=password]
+            {
+              color: white;
+            }
+
+
+            button
+            {
+                font-weight: 700;
+                width: 240px;
+                height: 40px;
+                margin: 20px 10px 5px;
+                color:white;
+                background:gold;
+                border-radius: 20px;
+                border:none;
+            }
+
+            button:hover
+            {
+              color:greenyellow;
+            }
+
+            #sign-up-button
+            {
+              background-color:maroon;
+            }
+            
+            #register-button
+            {
+              display: none;
+              margin: 15px 10px;
+            }
+
+            #register-form
+            {
+                padding: 110px 20px 20px;
+                height: 200px;
+                width: 100%;
+                display: none;
+            }
+
+            span
+            {
+              font-size: 13px;
+              margin: 40px auto;
+              position: absolute;
+            }
+
+            #pswd_info
+            {
+              position: absolute;
+              bottom:45px;
+              right:305px;
+              width:250px;
+              padding:10px;
+              background-color: rgba(10,10,10,.68);
+              font-size:.875em;
+            }
+            
+            ul
+            {
+              list-style-type: none;
+            }
+
+            #pswd_info h4 
+            {
+              color: white;
+              margin:0 0 10px 0;
+              padding:0;
+              font-weight:normal;
+            }
+
+            #pswd_info
+            {
+              display: none;
+            }
+
+            .invalid 
+            {
+              padding-left:22px;
+              line-height:24px;
+              color:#ec3f41;
+            }
+            .valid 
+            {
+              padding-left:22px;
+              line-height:24px;
+              color:#3a7d34;
+            }
+
+            .alert 
+            {
+            position: relative;
+            text-align: center;
+            top: -490px;
+            padding: 20px 10px;
+            background-color:green;
+            color: white;
+            letter-spacing: 2px;
+            display: none;
+            }
+
+            #error
+            {
+            position: relative;
+            text-align: center;
+            top: -490px;
+            padding: 20px 10px;
+            background-color:red;
+            color: white;
+            letter-spacing: 2px;
+            display: none;
+            }
+
+            .closebtn 
+            {
+            position: relative;
+            float: right;
+            bottom: 40px;
+            margin-left: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            }
+
+            .closebtn:hover 
+            {
+            color: black;
+            } 
+
+        </style>
+    </head>
+
+<body>
+<div class="main">
+    <div id="login">
+          <div class="logo">
+            <img src="https://bit.ly/2odhXRC">
+          </div>
+        <form id="login-form" action="https://localhost/login.php" method="POST">
+            <div class="user-input">
+              <input type="text" name="user" id="user" placeholder="Username/Email" required autofocus autocomplete="off"></input>
+            </div>
+            <div class="pass-input">
+              <input type="password" name="password" id="password" placeholder="Password" required></input>
+             </div>
+            <button id="login-button" type="submit" value="send">Log In</button>
+            <button id="sign-up-button" type="button"><a href="#"></a>Sign up</button>
+        </form>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            Successfully Logged In!
+        </div>
+        <div class="alert" id="error">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            Incorrect Username/Email or Password!
+        </div>
+
+        <form id="register-form" method="POST">
+          <div class="email-input">
+            <input type="text" name="email" id="email" placeholder="Email" required autofocus autocomplete="off"></input>
+          </div>
+          <div class="user-input">
+              <input type="text" name="username" id="username" placeholder="Username" required autocomplete="off"></input>
+              <span id="usernameResult"></span>
+              <span id="usernameLoading"></span>
+          </div>
+          <div class="pass-input">
+              <input type="password" name="pswd" id="pswd" placeholder="Password" required></input>
+          </div>
+          <div class="retype-p">
+              <input type="password" name="pswd2" id="pswd2" placeholder="Retype Password" required></input>
+              <span id='message'></span>
+          </div>
+          <div id="pswd_info">
+              <h4>Password must meet the following requirements:</h4>
+              <ul>
+                  <li id="special" class="invalid">At least <strong>one special character</strong></li>
+                  <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+                  <li id="number" class="invalid">At least <strong>one number</strong></li>
+                  <li id="length" class="invalid">Be at least <strong>6 characters</strong></li>
+              </ul>
+          </div>          
+            <button id="register-button" type="submit" value="send">Register</button>
+        </form> 
+    </div>
+</div>
+
+
+      <script src = 'https://code.jquery.com/jquery-3.4.1.min.js'></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+      <script>
+
+      </script>
+
+      <!--Animation Script-->
+      <script>
+        $('#sign-up-button').click(function()
+        {
+          $('#login-form').animate({height: "toggle", opacity: "toggle"}, "fast");
+          $('#register-form').toggle();
+          $('#register-button').toggle();
+          $('#login-button').toggle({display: "none"});
+          $('#sign-up-button').toggle({display: "none"});
+        });
+      </script>
+      <!-------------------->
+
+      <!--Password Script--->
+      <script>
+          $('input[type=password]').keyup(function() 
+          {
+            
+            var upperCase= new RegExp('[A-Z]');
+            var specialCharacter= new RegExp('[*@!#%&()^~{}]+');
+            var numbers = new RegExp('[0-9]');
+
+          //Length
+          if($(this).val().length < 6 )  
+          {
+            $('#length').removeClass('valid').addClass('invalid');
+          }
+          else
+          {
+            $('#length').removeClass('invalid').addClass('valid');
+          }
+
+          //Letter
+          if($(this).val().match(specialCharacter))
+          {
+            $('#special').removeClass('invalid').addClass('valid');
+          }
+          else
+          {
+            $('#special').removeClass('valid').addClass('invalid');
+          }
+
+          //Capital letter
+          if($(this).val().match(upperCase))
+          {
+            $('#capital').removeClass('invalid').addClass('valid');
+          }
+          else
+          {
+            $('#capital').removeClass('valid').addClass('invalid');
+          }
+          
+          //Number
+          if($(this).val().match(numbers))
+          {
+            $('#number').removeClass('invalid').addClass('valid');
+          }
+          else
+          {
+            $('#number').removeClass('valid').addClass('invalid');
+          }
+          }).focus(function()
+          { 
+            $('#pswd_info').show();
+          }).blur(function() 
+          {
+            $('#pswd_info').hide();
+          })
+
+      </script>
+      <!------------------->
+
+      <!--Matching Script-->
+      <script>
+      $('#pswd, #pswd2').on('keyup', function () 
+      {
+        if ($('#pswd').val() == $('#pswd2').val()) 
+        {
+          $('#message').html('Matching').css('color', 'green');
+        } 
+        else 
+          $('#message').html('Not Matching').css('color', 'red');
+      });
+      </script>
+      <!------------------->
+
+      <script>
+      $('#email').blur(function ()
+      {
+      str = $('#email').val();
+      str = str.split('@').slice(1);
+      var allowedDomains = ['asu.edu'];
+
+        if($.inArray(str[0], allowedDomains) !== -1)
+        {
+          
+        }
+        else
+        {
+          alert("Please use your current ASU email address.");
+          $('#email').focus();
+          return false;
+        }
+      });
+      
+      </script>
+
+      <!--TEST-->
+      <script>
+        $(document).ready(function() 
+        {
+          $('#username').keyup(function()
+        {
+          $.post("https://localhost/username-check.php",
+          {username: $('#username').val()
+          }, function(response)
+          {
+            $('#usernameResult').fadeOut();
+            setTimeout("Userresult('usernameResult','"+escape(response)+"')", 350)
+        });
+          return false;
+        });
+        });
+         
+        function Userresult(id,response)
+        {
+          $('#usernameLoading').hide();
+          $('#'+id).html(unescape(response));
+          $('#'+id).fadeIn();
+        }
+
+        $('#register-button').click(function()
+        {  
+          var email = $('#email').val();
+          var username = $('#username').val();
+          var pswd = $('#pswd').val();
+          var pswd2 = $('#pswd2').val();
+          var myData = {"email": email, "username": username, "pswd": pswd, "pswd2": pswd2};
+
+          $(myData).serialize();
+
+          $.ajax(
+            {
+              url:"https://localhost/user-data.php",
+              type: "POST",
+              data: myData,
+              success: function ()
+              {
+
+              }
+            });
+        });
+
+        $('#login-button').click(function()
+        {
+          var email, username = $('#user').val();
+          var pswd = $('#password').val();
+          var input = {"user": email, "user": username, "password": pswd};
+
+          $(input).serialize();
+
+          $.ajax(
+          {
+            url:"https://localhost/login.php",
+            type: "POST",
+            data: input,
+            success: function(response)
+            {
+            if($.trim(response) == 'ok')
+            {
+              $('.alert').toggle();
+              setTimeout('window.location.href = "https://localhost/worked.html";',1500);
+            }
+            else($.trim(response) == 'error')
+            {
+              $('#error').toggle();
+              setTimeout(function()
+              {
+                $('#error').toggle();
+              }, 2000);
+            }
+          }
+          });
+          return false;
+        });
+      </script>
+ </body>
+</html>

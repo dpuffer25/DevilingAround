@@ -1,0 +1,139 @@
+body
+{
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+
+}
+
+
+nav
+{
+	width: 100%;
+	background: #800000;
+	text-align: right;
+}
+
+ul
+{
+	width: 80%;
+	margin: 0 auto;
+	padding:0;
+}
+
+ul li
+{
+	list-style: none;
+	display: inline-block;
+	padding: 20px;
+/*	text-align: right;
+*/}
+
+ul li:hover
+{
+	background: #CFB53B;
+}
+
+ul li a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.toggle
+{
+	width: 100%;
+	padding: 10px 20px;
+	background: #800000;
+	text-align: right;
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 30px;
+	display: none;
+	
+}
+
+@media (max-width:768px)
+{
+	.toggle
+	{
+		display:block;
+	}
+
+	ul
+	{
+		width:100%;
+		display: none;
+	}
+
+	ul li
+	{
+		display:block;
+		text-align: center;
+	}
+	.active
+	{
+		display: block;
+	}
+}
+
+h1
+{
+	color:#fff;
+	text-align: center;
+	text-align: star;
+	font-size: 60pt;
+	padding-top: 20%;
+}
+
+h2
+{
+	color:#fff;
+	text-align: center;
+	margin-top: -1%;
+	font-size: 35pt;
+
+}
+
+body, html {
+	height: 100%;
+	margin: 0;
+  }
+  
+  .bg {
+	/* The image used */
+	background-image: url("palmwalk.jpg");
+  
+	/* Full height */
+	height: 100%; 
+  
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+
+ .bgProfile {
+	background-image: url(https://bit.ly/2Ov3POx);
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: cover;
+	background-image;
+	background-attachment: fixed;
+}
+
+.profilePicture{
+	border-radius: 50%;
+}
+
+.profileChanges{
+	border: #800000;
+	text-align: left;
+	color: whitesmoke
+}
+
+
+#curator-feed-default-layout
+{
+	padding-top: 20pt;
+}
